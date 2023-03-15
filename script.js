@@ -8,7 +8,8 @@ let userWeb = document.querySelector('.user-web');
 let skills = document.querySelector('.skills');
 let userPoints =[];
 
-const userSkills = [{level: 4.5, skillName:'Искуственный интеллект', }, 
+
+let userSkills = [{level: 4.5, skillName:'Искуственный интеллект', }, 
                     {level: 5.4, skillName:'Программирование',}, 
                     {level: 3.8, skillName:'Архитектура',}, 
                     {level: 2.6, skillName:'Управление проектами',}, 
@@ -18,8 +19,42 @@ const userSkills = [{level: 4.5, skillName:'Искуственный интел�
                     {level: 4.5, skillName:'Инфраструктура',}, 
                     {level: 4.8, skillName:'Управление данными',}, 
                     {level: 6, skillName:'Математика',}, 
-                    {level: 5.1, skillName:'Анализ данных',}
-                ];
+                    {level: 10, skillName:'Анализ данных',}
+];
+
+
+let items = document.querySelectorAll('.skill-item');
+
+for (let i = 0; i < items.length; i++) {
+    let item = items[i]
+    let input = item.querySelector('input');
+
+    item.addEventListener('input', (event) => {
+        let target = event.target
+        
+        if (+target.value < 0) {
+            target.value = 0
+        }
+        if (+target.value > 10) {
+            target.value = 10;
+        }
+
+        let targetValue = +target.value
+        let targetId = +target.dataset.id
+
+        userSkills[targetId].level = targetValue;
+    })
+
+    input.dataset.id = i;
+    let number = +input.value;
+    userSkills[i].level = number;
+}
+
+let button = document.querySelector('.button');
+
+button.addEventListener('click', () => {
+    setWeb()
+})
 
 
 document.addEventListener("DOMContentLoaded", setWeb);
@@ -109,6 +144,7 @@ function setLine (i, x0, y0, x, y) {
 
 
 function setRhomb(x0, y0, x, y, f, r, index) {
+    //console.log(x0, y0, x, y, f, r, index)
     let x1 = x0 + r * Math.cos((f+360/11) * Math.PI / 180);
     let y1 = y0 + r * Math.sin((f+360/11) * Math.PI / 180);
     
@@ -124,6 +160,7 @@ function setRhomb(x0, y0, x, y, f, r, index) {
 
 
 function setDiagramm(x0, y0, r, array) {
+    
     let points = ''
     
     let f = -90;
@@ -131,10 +168,10 @@ function setDiagramm(x0, y0, r, array) {
     for (let i=0; i< 11; i++) {   
         let x = x0 + r/10*array[i].level * Math.cos(f * Math.PI / 180);
         let y = y0 + r/10*array[i].level * Math.sin(f * Math.PI / 180);
-        
+        //console.log('massiv',array[i].level)
         addToArray(userPoints, x, y)
         
-        setRhomb(x0, y0, x, y, f, r/10*array[i], i)
+        setRhomb(x0, y0, x, y, f, r/10*array[i].level, i)
         
         points += `${x},${y} `
         

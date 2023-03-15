@@ -4,39 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
-    <svg width="500px" height="500px">
 
-        <g class="spider">
-            <polygon class='web-big'  style="fill:none; stroke:rgb(204, 204, 204); stroke-width:1; "/>
-            <polygon class='web-small'  style="fill:none; stroke:rgb(204, 204, 204); stroke-width:1; "/>
-            
-            <line class='line' id='ii'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='program'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='arhitecture'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='manager-project'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='komunication'  stroke="rgb(204, 204, 204)" />
-            <line class='line' id='manager-people'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='infirmation'  stroke="rgb(204, 204, 204)" />
-            <line class='line' id='infrastructure'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='manager-data'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='math'   stroke="rgb(204, 204, 204)" />
-            <line class='line' id='analysis'   stroke="rgb(204, 204, 204)" />
-            
-            <g class='rhombs'></g>
-        </g>
+    <div class="container">
+        <svg width="500px" height="400px">
 
-        <g class="user">
-          <polygon class='user-web' style="fill:rgba(28, 157, 217, 0.75); stroke:rgb(28, 157, 217); stroke-width:2; "/>
-          
-          <g class='skills'></g>
-          
-        </g>
-    </svg>
+            <g class="spider">
+                <polygon class='web-big'  style="fill:none; stroke:rgb(204, 204, 204); stroke-width:1; "/>
+                <polygon class='web-small'  style="fill:none; stroke:rgb(204, 204, 204); stroke-width:1; "/>
+                
+                <line class='line' id='ii'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='program'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='arhitecture'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='manager-project'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='komunication'  stroke="rgb(204, 204, 204)" />
+                <line class='line' id='manager-people'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='infirmation'  stroke="rgb(204, 204, 204)" />
+                <line class='line' id='infrastructure'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='manager-data'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='math'   stroke="rgb(204, 204, 204)" />
+                <line class='line' id='analysis'   stroke="rgb(204, 204, 204)" />
+                
+                <g class='rhombs'></g>
+            </g>
+    
+            <g class="user">
+              <polygon class='user-web' style="fill:rgba(28, 157, 217, 0.75); stroke:rgb(28, 157, 217); stroke-width:2; "/>
+              
+              <g class='skills'></g>
+              
+            </g>
+        </svg>
+
+        <div>
+            <div class="skill-item">
+                <label>Искуственный интеллект</label>
+                <input type="number" placeholder="0" value="4.5" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Программирование</label>
+                <input type="number" placeholder="0" value="5.4" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Архитектура</label>
+                <input type="number" placeholder="0" value="3.8" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Управление проектами</label>
+                <input type="number" placeholder="0" value="2.6" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Коммуникации</label>
+                <input type="number" placeholder="0" value="6.7" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Управление персоналом</label>
+                <input type="number" placeholder="0" value="4" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Работа с информацией</label>
+                <input type="number" placeholder="0" value="3.5" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Инфраструктура</label>
+                <input type="number" placeholder="0" value="4.5" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Управление данными</label>
+                <input type="number" placeholder="0" value="4.8" step="0.1" min="0" max="10">
+            </div>
+
+            <div class="skill-item">
+                <label>Математика</label>
+                <input type="number" placeholder="0" value="6" step="0.1" min="0" max="10">
+            </div>
+            
+            <div class="skill-item">
+                <label>Анализ данных</label>
+                <input type="number" placeholder="0" value="5.1" step="0.1" min="0" max="10">
+            </div>
+
+            <button class="button">Построить диаграмму по новым данным</button>
+        </div>
+    </div>
+    
 
     
-    <script src="script.js">    </script>
+    <script src="script.js"></script>
 </body>
 </html>
